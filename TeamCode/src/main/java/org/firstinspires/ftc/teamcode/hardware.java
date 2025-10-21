@@ -9,9 +9,9 @@ public class hardware {
     public DcMotor backRight;
     public DcMotor frontRight;
 
-    private DcMotor arm;
-    private DigitalChannel limitMagnet;
+    public DcMotor arm;
+    public DigitalChannel limitMagnet;
 
-    private DcMotor uppergrabby;
-    private DcMotor lowergrabby;
+    public DcMotor uppergrabby;
+    public DcMotor lowergrabby;
 }

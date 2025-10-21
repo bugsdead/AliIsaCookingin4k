@@ -11,6 +11,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
 @TeleOp(name = "Izzy")
 public class Izzy extends LinearOpMode {
     // Motors
