@@ -105,28 +105,22 @@ public class Izzy extends LinearOpMode {
 
 
             if (gamepad1.b) {
-                if (gamepad1.b && (!uppergrabby.isBusy() && !lowergrabby.isBusy()) && bIsPressed == 0) {
-                    uppergrabby.setPower(3.2);
-                    lowergrabby.setPower(3.2);
-                    bIsPressed = 1;
-//                    b = false;
-                }
-                if (gamepad1.b && (uppergrabby.isBusy() && lowergrabby.isBusy()) && bIsPressed == 1) {
-                    uppergrabby.setPower(0);
-                    lowergrabby.setPower(0);
-                    bIsPressed = 0;
-//                    b = true;
-                }
+                uppergrabby.setPower(3.2);
+                lowergrabby.setPower(3.2);
             }
-
-            boolean a = true;
-
-
+            if (gamepad1.a) {
+                uppergrabby.setPower(-3.2);
+                lowergrabby.setPower(-3.2);
+            }
+            if (gamepad1.a && gamepad1.b) {
+                uppergrabby.setPower(0);
+                lowergrabby.setPower(0);
+            }
 
             if ((Math.abs(gamepad1.left_trigger) > threshold) && (limitMagnet.getState())) {
                 arm.setPower(armUp * gamepad1.left_trigger);
             } else if ((Math.abs(gamepad1.left_trigger) > threshold) && (!limitMagnet.getState())){
-                arm.setPower(0.2);
+                arm.setPower(0.2 * (gamepad1.left_trigger));
             }
 
 
